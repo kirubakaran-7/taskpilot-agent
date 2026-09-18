@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="860" height="420" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1a4e8a">TaskPilot — Agentic Loop</text>
+
+  <!-- User -->
+  <rect x="40" y="90" width="150" height="70" rx="10" fill="#eef4fb" stroke="#1a4e8a" stroke-width="1.5"/>
+  <text x="115" y="120" text-anchor="middle" font-size="15" font-weight="600" fill="#1f2937">User Goal</text>
+  <text x="115" y="140" text-anchor="middle" font-size="12" fill="#64748b">natural language</text>
+
+  <!-- LLM / Agent -->
+  <rect x="355" y="80" width="170" height="90" rx="10" fill="#1a4e8a"/>
+  <text x="440" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">LLM Agent</text>
+  <text x="440" y="134" text-anchor="middle" font-size="12" fill="#cfe0f3">reason + decide</text>
+  <text x="440" y="152" text-anchor="middle" font-size="12" fill="#cfe0f3">(tool calling)</text>
+
+  <!-- Memory -->
+  <rect x="355" y="300" width="170" height="60" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="440" y="330" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2937">Conversation Memory</text>
+  <text x="440" y="348" text-anchor="middle" font-size="11" fill="#64748b">context across turns</text>
+
+  <!-- Tools -->
+  <rect x="680" y="60" width="150" height="46" rx="8" fill="#eaf7ee" stroke="#2f9e57" stroke-width="1.5"/>
+  <text x="755" y="88" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2937">🧮 calculator</text>
+
+  <rect x="680" y="118" width="150" height="46" rx="8" fill="#eaf7ee" stroke="#2f9e57" stroke-width="1.5"/>
+  <text x="755" y="146" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2937">🔎 web_search</text>
+
+  <rect x="680" y="176" width="150" height="46" rx="8" fill="#eaf7ee" stroke="#2f9e57" stroke-width="1.5"/>
+  <text x="755" y="204" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2937">📝 notes</text>
+
+  <!-- Final answer -->
+  <rect x="355" y="230" width="170" height="46" rx="8" fill="#fff7e6" stroke="#e0a12b" stroke-width="1.5"/>
+  <text x="440" y="258" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2937">Final Answer</text>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <!-- user -> agent -->
+  <line x1="190" y1="125" x2="350" y2="125" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- agent -> tools -->
+  <line x1="525" y1="110" x2="675" y2="83" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="525" y1="125" x2="675" y2="141" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="525" y1="140" x2="675" y2="199" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- tools -> agent (observation) -->
+  <path d="M755 222 C 755 270, 560 250, 527 160" fill="none" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="620" y="255" font-size="11" fill="#94a3b8">observation</text>
+  <!-- agent <-> memory -->
+  <line x1="440" y1="170" x2="440" y2="298" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- agent -> final -->
+  <line x1="440" y1="170" x2="440" y2="228" stroke="#475569" stroke-width="0"/>
+  <path d="M360 125 C 300 200, 320 253, 353 253" fill="none" stroke="#e0a12b" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="300" y="215" font-size="11" fill="#e0a12b">done</text>
+
+  <text x="430" y="398" text-anchor="middle" font-size="12" fill="#94a3b8">Python · LangChain (create_tool_calling_agent + AgentExecutor) · OpenAI / Ollama</text>
+</svg>
